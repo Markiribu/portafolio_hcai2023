@@ -1,4 +1,4 @@
 # hcai2023
-Esto es un repositorio de un curso de atroinformatica
+Esto es un repositorio de un curso de atroinformatica, lmaooo
 
 
