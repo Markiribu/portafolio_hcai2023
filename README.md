@@ -1,4 +1,5 @@
-# hcai2023
-Esto es un repositorio de un curso de atroinformatica, lmaooo
+# Portafolio de Herramientas Computacionales para AstroInformatica
+Apuntes, codigos, informacion miscelanea utilizada durante el curso de herramientas computacionales para astroinformatica.
+
 
 
