@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-// A function to check if a number is prime
+// es el numero n primo o no?, eso responde esta funcion
 int is_prime(int n) {
-  // A prime number is divisible only by itself and 1
+  // por definicion un numero primo debe ser divisible solo por si mismo y 1, entonces si no es asi, return false(0)
   for (int i = 2; i <= n / 2; i++) {
     if (n % i == 0) {
       return 0;
@@ -13,19 +13,20 @@ int is_prime(int n) {
 }
 
 int main() {
-  // Initialize an array to store the prime numbers
+  // array de numeros hasta el 200
   int primes[200];
+  // cuenta del numero un indice en esencia
   int count = 0;
 
-  // Iterate through all numbers from 2 to 200
+  // ciclo desde el 2 hasta el 200
   for (int i = 2; i <= 200; i++) {
-    // If the number is prime, add it to the array
+    // en caso de ser un numero primo se añade al array
     if (is_prime(i)) {
       primes[count++] = i;
     }
   }
 
-  // Print the prime numbers
+  // mostrando el array de numeros primos final
   for (int i = 0; i < count; i++) {
     printf("%d ", primes[i]);
   }
