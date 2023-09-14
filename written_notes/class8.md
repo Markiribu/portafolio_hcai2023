@@ -9,5 +9,9 @@
 ### 	counter[i] = i;
 ### // Luego de usar, la memoria dinámica se debe liberar:
 ### free(counter);
-# Makefile Make, y compilar tu proyecto de un socataz!
-# 
+# Makefile Make, automatiza y compila tu proyecto de un socataz
+## Tiene la siguiente estructura en donde al no ser cumplido el objetivo ejecutara lo identado siempre y cuando las condiciones/dependencias si esten cumplidas
+### objetivo : condiciones
+### 	$(COMANDOS EN BASH)
+## Esto tiene el potencial de compilar grandes proyectos con multiples dependencias sin la necesidad de correr todos los comandos encesarios uno por uno.
+## make -j(numero) para "compilar" utilizando multiples hilos.
