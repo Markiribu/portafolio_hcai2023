@@ -8,4 +8,5 @@
 #### objeto = testclase("tumami","tupapi")
 #### objeto.x3 = "tuprimi"
 ### ------------------------------------
-### 
+### metodos de instancia
+### dentro de las funciones en una clase puedes ejectuar cambios a los atributos del mismo objeto
