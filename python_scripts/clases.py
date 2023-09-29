@@ -1,23 +1,41 @@
 class Fraccion():
-    def __init__(self, numerador, denominador):
-        if ((type(numerador)!=int) ^ (type(denominador)!=int)):
+    def __init__(self, n, d):
+        if ((type(n)!=int) ^ (type(d)!=int)):
             raise Exception("ERROR: numerador y denominador deben ser numeros enteros")
-        self.numerador = numerador
-        self.denominador = denominador
-    def show(self):
-        print(str(self.numerador)+'/'+str(self.denominador))
+        self.n = n
+        self.d = d
+    
     def simplificar(self):
-        if self.numerador < self.denominador:
-            while (((self.denominador%self.numerador) == 0) & (self.numerador != 1)):
-                self.denominador /= self.numerador
-                self.numerador /= self.numerador
-        if ((self.denominador < self.numerador) & (self.denominador != 1)):
-            self.numerador /= self.denominador
-            self.denominador /= self.denominador
-        self.denominador = int(self.denominador)
-        self.numerador = int(self.numerador)
+        if ((self.n < self.d) & (self.d%self.n == 0) & (self.n != 1)):
+            self.d /= self.n
+            self.n /= self.n
+        if ((self.d < self.n) & (self.n%self.d == 0) & (self.d != 1)):
+            self.n /= self.d
+            self.d /= self.d
+        self.d = int(self.d)
+        self.n = int(self.n)
+    
+    def __str__(self):
+        return(str(self.n)+"/"+str(self.d))
 
-x = Fraccion(8,16)
+    def __add__(self, c):
+        if c.d == self.d:
+            resultado = Fraccion(self.n+c.n,self.d)
+            resultado.simplificar
+            return(resultado)
+        else:
+            resultado = Fraccion(((self.n*c.d)+(c.n*self.d)),self.d*c.d)
+            resultado.simplificar
+            return(resultado)
+    
+    def __mul__(self, c):
+        resultado = Fraccion(self.n*c.n,self.d*c.d)
+        resultado.simplificar
+        return(resultado)
 
-x.simplificar()
-x.show()
+x = Fraccion(10,9)
+x2 = Fraccion(11,9)
+x3 = Fraccion(12,10)
+
+
+print(x*x2)
