@@ -14,6 +14,7 @@ GRID_HEIGHT = SCREEN_HEIGHT // GRID_SIZE
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
+BLACK = (0, 0, 0)
 
 # Initialize the screen
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -67,7 +68,7 @@ while not game_over:
         game_over = True
 
     # Clear the screen
-    screen.fill(WHITE)
+    screen.fill(BLACK)
 
     # Draw the snake
     for segment in snake:
@@ -78,14 +79,14 @@ while not game_over:
 
     # Display the score
     font = pygame.font.Font(None, 36)
-    text = font.render(f"Score: {score}", True, (0, 0, 0))
+    text = font.render(f"Score: {score}", True, WHITE)
     screen.blit(text, (10, 10))
 
     # Update the display
     pygame.display.update()
 
     # Control game speed
-    pygame.time.delay(100)
+    pygame.time.delay(70)
 
 # Quit Pygame
 pygame.quit()

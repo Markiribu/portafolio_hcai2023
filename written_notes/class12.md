@@ -11,3 +11,5 @@
 #### 
 #### est = Estudiantes('Testsubject', '12.345.678-9', 25, 4)
 #### est.RUT
+### ---------------------------
+### A la hora de herencia de metodos, podemos tener polimorfismo
