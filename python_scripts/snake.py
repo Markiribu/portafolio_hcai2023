@@ -15,6 +15,7 @@ WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 BLACK = (0, 0, 0)
+PURPLE = (255, 0, 255)
 
 # Initialize the screen
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -30,6 +31,8 @@ food = (random.randint(0, GRID_WIDTH - 1), random.randint(0, GRID_HEIGHT - 1))
 # Game variables
 score = 0
 game_over = False
+
+global_delay = 100
 
 # Main game loop
 while not game_over:
@@ -54,6 +57,8 @@ while not game_over:
     if snake[0] == food:
         score += 1
         food = (random.randint(0, GRID_WIDTH - 1), random.randint(0, GRID_HEIGHT - 1))
+        if (score%5 == 0):
+            global_delay -= 10
     else:
         snake.pop()
 
@@ -72,7 +77,7 @@ while not game_over:
 
     # Draw the snake
     for segment in snake:
-        pygame.draw.rect(screen, GREEN, (segment[0] * GRID_SIZE, segment[1] * GRID_SIZE, GRID_SIZE, GRID_SIZE))
+        pygame.draw.rect(screen, (random.randint(0,254),random.randint(0,254),random.randint(0,254)), (segment[0] * GRID_SIZE, segment[1] * GRID_SIZE, GRID_SIZE, GRID_SIZE))
 
     # Draw the food
     pygame.draw.rect(screen, RED, (food[0] * GRID_SIZE, food[1] * GRID_SIZE, GRID_SIZE, GRID_SIZE))
@@ -86,7 +91,7 @@ while not game_over:
     pygame.display.update()
 
     # Control game speed
-    pygame.time.delay(70)
+    pygame.time.delay(global_delay)
 
 # Quit Pygame
 pygame.quit()
